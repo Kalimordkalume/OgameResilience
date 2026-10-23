@@ -6,7 +6,7 @@
 - Repositorio: github.com/Kalimordkalume/OgameResilience (público), `main` con la historia limpia desde el primer commit.
 
 ## Siguiente paso concreto
-Paso 4 de la guía: el primer código, el núcleo de cálculo en Java puro (interfaz `Calculator`, su
+Paso 4 de la guía: el primer código, el núcleo de cálculo en Java 25 puro (interfaz `Calculator`, su
 implementación y un test de contrato). Los valores de oro del Paso 2 se rellenan cuando se pueda, en la
 tabla de `docs/decisions/0001-fuente-de-datos.md`; las fórmulas recogidas están en `docs/formulas.md`.
 
@@ -18,6 +18,7 @@ tabla de `docs/decisions/0001-fuente-de-datos.md`; las fórmulas recogidas está
 | 2026-10-23 | `main` y ramas cortas, sin `develop` (`docs/decisions/0003-ramas.md`) | Menos ceremonia; se reabre si hay versiones que mantener en paralelo |
 | 2026-10-23 | Fórmulas de la comunidad, validadas con valores de mi cuenta (`docs/decisions/0001-fuente-de-datos.md`) | No hay documentación oficial |
 | 2026-10-23 | Java y Spring Boot, PostgreSQL, núcleo puro tras la interfaz `Calculator`, de menos a más (`docs/decisions/0002-pila-por-capitulos.md`) | Que luzca primero y optimizar después, midiendo |
+| 2026-10-23 | Java 25 (LTS) para todo el proyecto | Una sola versión que mantener; probada con Spring Boot 3.5.16 en un proyecto de pruebas |
 
 ## Identidad de git en un equipo nuevo
 Antes del primer commit, comprueba con quién vas a firmar:
