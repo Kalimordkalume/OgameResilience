@@ -1,14 +1,14 @@
 # Handoff: ogame-planner
 
 ## Estado
-- Último paso terminado: Paso 1 (2026-10-23). El Paso 2 está hecho salvo los valores de oro de tu cuenta.
+- Último paso terminado: Paso 3 (2026-10-23). El Paso 2 está hecho salvo los valores de oro de tu cuenta.
 - Tests: no aplica todavía, aún no hay código.
 - Repositorio: github.com/Kalimordkalume/OgameResilience (público), `main` con la historia limpia desde el primer commit.
 
 ## Siguiente paso concreto
-Paso 3 de la guía: decidir la pila por capítulos (lenguaje, base de datos y cómo se prepara el núcleo para
-migrarlo). Los valores de oro del Paso 2 se rellenan cuando se pueda, en la tabla de
-`docs/decisions/0001-fuente-de-datos.md`; las fórmulas recogidas están en `docs/formulas.md`.
+Paso 4 de la guía: el primer código, el núcleo de cálculo en Java puro (interfaz `Calculator`, su
+implementación y un test de contrato). Los valores de oro del Paso 2 se rellenan cuando se pueda, en la
+tabla de `docs/decisions/0001-fuente-de-datos.md`; las fórmulas recogidas están en `docs/formulas.md`.
 
 ## Decisiones tomadas
 | Fecha | Decisión | Motivo |
@@ -16,6 +16,8 @@ migrarlo). Los valores de oro del Paso 2 se rellenan cuando se pueda, en la tabl
 | 2026-10-20 | Repositorio propio y nuevo, público | Portfolio, historia limpia desde el primer commit |
 | 2026-10-23 | Identidad de git por repositorio, en `.git/config`, con el correo noreply de GitHub | Menos piezas que mantener; el correo real no queda expuesto |
 | 2026-10-23 | `main` y ramas cortas, sin `develop` (`docs/decisions/0003-ramas.md`) | Menos ceremonia; se reabre si hay versiones que mantener en paralelo |
+| 2026-10-23 | Fórmulas de la comunidad, validadas con valores de mi cuenta (`docs/decisions/0001-fuente-de-datos.md`) | No hay documentación oficial |
+| 2026-10-23 | Java y Spring Boot, PostgreSQL, núcleo puro tras la interfaz `Calculator`, de menos a más (`docs/decisions/0002-pila-por-capitulos.md`) | Que luzca primero y optimizar después, midiendo |
 
 ## Identidad de git en un equipo nuevo
 Antes del primer commit, comprueba con quién vas a firmar:
