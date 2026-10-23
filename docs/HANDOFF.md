@@ -1,13 +1,14 @@
 # Handoff: ogame-planner
 
 ## Estado
-- Último paso terminado: Paso 0 (2026-10-23)
+- Último paso terminado: Paso 1 (2026-10-23). El Paso 2 está hecho salvo los valores de oro de tu cuenta.
 - Tests: no aplica todavía, aún no hay código.
 - Repositorio: github.com/Kalimordkalume/OgameResilience (público), `main` con la historia limpia desde el primer commit.
 
 ## Siguiente paso concreto
-Paso 2 de la guía: decidir de dónde salen los datos del juego. Crear
-`docs/decisions/0001-fuente-de-datos.md` y conseguir tres valores de tu cuenta.
+Paso 3 de la guía: decidir la pila por capítulos (lenguaje, base de datos y cómo se prepara el núcleo para
+migrarlo). Los valores de oro del Paso 2 se rellenan cuando se pueda, en la tabla de
+`docs/decisions/0001-fuente-de-datos.md`; las fórmulas recogidas están en `docs/formulas.md`.
 
 ## Decisiones tomadas
 | Fecha | Decisión | Motivo |
@@ -41,4 +42,6 @@ identidad global del equipo, sin avisar.
   `git status` y `git log` al acabar cada sesión con IA.
 
 ## Bloqueos
-Ninguno.
+- Faltan los valores de oro de tu cuenta de OGame: un coste de cristal, un valor de deuterio con la
+  temperatura máxima del planeta, y un tiempo de construcción con tus niveles de robótica y nanita y la
+  velocidad del universo. No bloquean el Paso 3; sí bloquean confirmar las fórmulas (Paso 4 en adelante).
