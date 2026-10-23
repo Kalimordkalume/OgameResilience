@@ -17,13 +17,14 @@ Paso 2 de la guía: decidir de dónde salen los datos del juego. Crear
 | 2026-10-23 | `main` y ramas cortas, sin `develop` (`docs/decisions/0003-ramas.md`) | Menos ceremonia; se reabre si hay versiones que mantener en paralelo |
 
 ## Identidad de git en un equipo nuevo
-Después de clonar, antes del primer commit:
+Antes del primer commit, comprueba con quién vas a firmar:
 
-    git config --local user.name "Abraham Kalume"
-    git config --local user.email "111978846+Kalimordkalume@users.noreply.github.com"
-    git config --show-origin user.email      (debe decir .git/config)
+    git config --show-origin user.email
 
-Si no se hace, git usa la identidad global del equipo, sin avisar.
+Debe salir tu identidad personal y no la global del equipo. Si no, defínela solo para este
+repositorio con `git config --local user.name ...` y `git config --local user.email ...`
+(en un repositorio público, mejor el correo noreply de GitHub). Si no se hace, git usa la
+identidad global del equipo, sin avisar.
 
 ## Decisiones de hábitos
 | Hábito | Estado | Motivo | Revisar |
