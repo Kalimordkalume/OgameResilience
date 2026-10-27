@@ -6,15 +6,21 @@
   <groupId>com.kalume.ogame</groupId>
   <artifactId>ogame-planner</artifactId>
   <version>0.1.0-SNAPSHOT</version>
+  <!-- Proyecto padre: solo reparte versiones y reglas. El código vive en los módulos. -->
+  <packaging>pom</packaging>
 
   <name>ogame-planner</name>
   <url>https://github.com/Kalimordkalume/OgameResilience</url>
+
+  <modules>
+    <module>domain</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>25</maven.compiler.release>
     <!-- JUnit 5: la línea que usa Spring Boot 3.5 (JUnit 6 va con Boot 4). -->
-    <junit.version>5.14.4</junit.version>
+    <junit.version>6.1.3</junit.version>
   </properties>
 
   <dependencyManagement>
@@ -28,15 +34,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <dependencies>
-    <!-- junit-jupiter reúne la API, los tests parametrizados y el motor que los ejecuta. -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 
   <build>
     
@@ -53,11 +50,12 @@
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.13.0</version>
+          <!-- 3.14.1: la probada con module-info.java y Java 25 (la 3.13.0 no se ha probado con módulos). -->
+          <version>3.14.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.5.6</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
