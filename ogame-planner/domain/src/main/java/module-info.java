@@ -4,7 +4,7 @@
  */
 module com.kalume.ogame.domain {
     exports com.kalume.ogame.domain;
+    exports com.kalume.ogame.domain.buildings;
     exports com.kalume.ogame.domain.buildings.enums;
     exports com.kalume.ogame.domain.buildings.enums.lifeform;
-    // com.kalume.ogame.domain.buildings se exportará cuando tenga clases (Building está vacía de momento).
 }

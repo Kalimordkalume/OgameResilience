@@ -14,12 +14,15 @@
 
   <modules>
     <module>domain</module>
+    <module>application</module>
+    <module>infrastructure</module>
+    <module>cli</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>25</maven.compiler.release>
-    <!-- JUnit 5: la línea que usa Spring Boot 3.5 (JUnit 6 va con Boot 4). -->
+    <!-- JUnit 6. Si el módulo app usa Spring Boot 3.5 (que trae JUnit 5), habrá que revisar esta versión. -->
     <junit.version>6.1.3</junit.version>
   </properties>
 
@@ -31,6 +34,22 @@
         <version>${junit.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <!-- Módulos propios: los demás módulos los referencian sin escribir la versión. -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ogame-domain</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ogame-application</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ogame-infrastructure</artifactId>
+        <version>${project.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

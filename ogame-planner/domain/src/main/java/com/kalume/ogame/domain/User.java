@@ -1,59 +1,43 @@
 package com.kalume.ogame.domain;
 
-import java.util.ArrayList;
+import java.util.Objects;
 import java.util.UUID;
 
 public class User {
-    private UUID id;
-    private String userName;
-    private String email;
+    private final UUID id;
+    private final UserName userName;
+    private final Email email;
 
-    private ArrayList<Profile> profiles;
-
-    public User(UUID id, String userName, String email) {
-        this.id = id;
-        this.userName = userName;
-        this.email = email;
+    private User(UUID id, UserName userName, Email email) {
+        this.id = Objects.requireNonNull(id);
+        this.userName = Objects.requireNonNull(userName);
+        this.email = Objects.requireNonNull(email);
     }
 
-    public void addProfile(Profile profile) {
-        if (profiles == null) {
-            profiles = new ArrayList<>();
-        }
-        profiles.add(profile);
-    }
-
-    public void removeProfile(Profile profile) {
-        if (profiles != null) {
-            profiles.remove(profile);
-        }
-    }
-
-    public ArrayList<Profile> getProfiles() {
-        return profiles;
+    /** Da de alta un usuario nuevo: el identificador lo genera el sistema, nunca el usuario. */
+    public static User register(UserName userName, Email email) {
+        return new User(UUID.randomUUID(), userName, email);
     }
 
     public UUID getId() {
         return id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
+    public UserName getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getEmail() {
+    public Email getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    @Override
+    public boolean equals(Object other) {
+        return other instanceof User user && id.equals(user.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
     }
 }
