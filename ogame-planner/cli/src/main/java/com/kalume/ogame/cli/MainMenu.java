@@ -44,7 +44,7 @@ public class MainMenu {
 
     private String describe(MenuInputError error) {
         return switch (error) {
-            case MenuInputError.EmptyInput e -> "No has escrito nada.";
+            case MenuInputError.EmptyInput _ -> "No has escrito nada.";
             case MenuInputError.NotANumber e -> "'" + e.input() + "' no es un número válido.";
             case MenuInputError.UnknownOption e -> "La opción " + e.id() + " no existe. Opciones disponibles: "
                     + Arrays.stream(MainMenuOption.values())

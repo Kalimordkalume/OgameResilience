@@ -1,4 +1,6 @@
-package com.kalume.ogame.cli;
+package com.kalume.ogame.cli.users;
+
+import com.kalume.ogame.cli.MenuOption;
 
 public enum UsersMenuOption implements MenuOption {
 

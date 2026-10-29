@@ -4,6 +4,7 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 import com.kalume.ogame.cli.users.UsersMenu;
+import com.kalume.ogame.cli.users.UsersMenuOption;
 
 public class Main {
 
