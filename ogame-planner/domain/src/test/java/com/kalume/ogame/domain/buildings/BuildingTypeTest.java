@@ -9,12 +9,15 @@ import org.junit.jupiter.api.Test;
 
 class BuildingTypeTest {
 
-    /** Sin "default": si BuildingType permite un tipo nuevo y aquí falta su caso, no compila. */
+    /**
+     * Sin "default": si BuildingType permite un tipo nuevo y aquí falta su caso, no
+     * compila.
+     */
     private static String group(BuildingType type) {
         return switch (type) {
-            case ResourceBuilding resource -> "recursos";
-            case FacilityBuilding facility -> "instalaciones";
-            case HumanBuilding human -> "humanos";
+            case ResourceBuilding _ -> "recursos";
+            case FacilityBuilding _ -> "instalaciones";
+            case HumanBuilding _ -> "humanos";
         };
     }
 
