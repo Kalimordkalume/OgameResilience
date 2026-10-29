@@ -1,27 +1,23 @@
 package com.kalume.ogame.cli;
 
-import com.kalume.ogame.application.user.CreateUser;
-import com.kalume.ogame.cli.commands.CreateUserCommand;
-import com.kalume.ogame.cli.commands.ListBuildingsCommand;
-import com.kalume.ogame.infrastructure.memory.InMemoryUserRepository;
-import java.util.List;
+import java.nio.charset.Charset;
 
-/** Punto de entrada: monta las piezas y arranca el menú. Aquí (y solo aquí) se eligen las implementaciones. */
 public class Main {
 
     public static void main(String[] args) {
-        var console = new Console(System.in, System.out);
-        var users = new InMemoryUserRepository();
 
-        var menu = new Menu(console, List.of(
-                new CreateUserCommand(console, new CreateUser(users)),
-                new ListBuildingsCommand(console)));
+        String name = System.getProperty("stdin.encoding");
+        Charset charset = (name != null) ? Charset.forName(name) : Charset.defaultCharset();
+        Console console = new Console(System.in, System.out, charset);
 
-        try {
-            menu.run();
-        } catch (InputClosedException e) {
-            console.println("");
-        }
-        console.println("Hasta luego.");
+        console.println("Programa iniciado...");
+
+        console.println("Iniciando consola interactiva...");
+        MenuInputParser parser = new MenuInputParser();
+        MainMenu mainMenu = new MainMenu(console, parser, "MAIN MENU");
+        CLI cliClient = new CLI(console, mainMenu);
+
+        cliClient.start();
+
     }
 }
