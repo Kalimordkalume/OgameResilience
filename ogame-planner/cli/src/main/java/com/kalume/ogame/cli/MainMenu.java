@@ -10,10 +10,10 @@ import java.util.stream.Collectors;
  */
 public class MainMenu {
     private final Console console;
-    private final MenuInputParser parser;
+    private final MenuInputParser<MainMenuOption> parser;
     private final String title;
 
-    public MainMenu(Console console, MenuInputParser parser, String title) {
+    public MainMenu(Console console, MenuInputParser<MainMenuOption> parser, String title) {
         this.console = console;
         this.parser = parser;
         this.title = title;

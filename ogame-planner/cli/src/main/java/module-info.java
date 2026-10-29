@@ -7,5 +7,4 @@ module com.kalume.ogame.cli {
     requires com.kalume.ogame.domain;
     requires com.kalume.ogame.application;
     requires com.kalume.ogame.infrastructure;
-    requires java.xml;
 }
